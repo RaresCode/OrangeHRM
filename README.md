@@ -1,7 +1,7 @@
 
 Required Packages:
-Selenium
-Pytest
-Pytest-html
-Pytest-xdist
-Openpyxl
+Selenium, 
+Pytest, 
+Pytest-html, 
+Pytest-xdist, 
+Openpyxl, 
