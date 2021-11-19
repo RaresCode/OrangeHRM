@@ -5,8 +5,10 @@ from webdriver_manager.microsoft import EdgeChromiumDriverManager
 from webdriver_manager.opera import OperaDriverManager
 from selenium import webdriver
 import pytest
+import os
 import sys
-sys.path.append("..\\..\\project")
+current_directory = os.path.abspath("..\\")
+sys.path.append(current_directory)
 
 @pytest.fixture()
 def setup(browser):
