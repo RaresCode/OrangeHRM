@@ -1,4 +1,7 @@
 from selenium.webdriver.support.ui import Select
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support import expected_conditions as EC
 
 class Qualifications():
     # Work Experience
@@ -70,14 +73,15 @@ class Qualifications():
     
     def __init__(self, driver):
         self.driver = driver
+        self.WebDriverWait = WebDriverWait(self.driver, 10)
     
     # Work Experience
         
     def ClickOnAddExperience(self):
-        self.driver.find_element_by_id(self.btnAddExp_id).click()
+        self.WebDriverWait.until(EC.presence_of_element_located((By.ID , self.btnAddExp_id))).click()
         
     def SetExpCompany(self, Experience):
-        self.driver.find_element_by_id(self.txtExpCompany_id).send_keys(Experience)
+        self.WebDriverWait.until(EC.presence_of_element_located((By.ID , self.txtExpCompany_id))).send_keys(Experience)
     
     def SetJobTitle(self, JobTitle):
         self.driver.find_element_by_id(self.txtExpJobTitle_id).send_keys(JobTitle)
@@ -100,7 +104,7 @@ class Qualifications():
         self.driver.find_element_by_id(self.btnCancelExp_id).click()
     
     def SelectAllExp(self):
-        self.driver.find_element_by_id(self.cbSelectAllExp_id).click()
+        self.WebDriverWait.until(EC.presence_of_element_located((By.ID , self.cbSelectAllExp_id))).click()
     
     def ClickOnDeleteExp(self):
         self.driver.find_element_by_id(self.btnDeleteExp_id).click()
@@ -108,9 +112,10 @@ class Qualifications():
     # Education
     
     def ClickOnAddEducation(self):
-        self.driver.find_element_by_id(self.btnAddEducation_id).click()
+        self.WebDriverWait.until(EC.presence_of_element_located((By.ID , self.btnAddEducation_id))).click()
     
     def SetEducationLevel(self, EducationLevel):
+        self.WebDriverWait.until(EC.presence_of_element_located((By.ID , self.drpEducationLevel_id)))
         self.drp = Select(self.driver.find_element_by_id(self.drpEducationLevel_id))
         self.drp.select_by_value(EducationLevel)
     
@@ -141,7 +146,7 @@ class Qualifications():
         self.driver.find_element_by_id(self.btnCancelEducation_id).click()
     
     def SelectAllEducation(self):
-        self.driver.find_element_by_id(self.cbSelectAllEducation_id).click()
+        self.WebDriverWait.until(EC.presence_of_element_located((By.ID , self.cbSelectAllEducation_id))).click()
     
     def ClickOnDeleteEducation(self):
         self.driver.find_element_by_id(self.btnDeleteEducation_id).click()
@@ -149,9 +154,10 @@ class Qualifications():
     # Skills
     
     def ClickOnAddSkills(self):
-        self.driver.find_element_by_id(self.btnAddSkills_id).click()
+        self.WebDriverWait.until(EC.presence_of_element_located((By.ID , self.btnAddSkills_id))).click()
     
     def SetSkill(self, Skill):
+        self.WebDriverWait.until(EC.presence_of_element_located((By.ID , self.drpSelectSkill_id)))
         self.drp = Select(self.driver.find_element_by_id(self.drpSelectSkill_id))
         self.drp.select_by_value(Skill)
 
@@ -168,7 +174,7 @@ class Qualifications():
         self.driver.find_element_by_id(self.btnCancelSkill_id).click()
     
     def SelectAllSkills(self):
-        self.driver.find_element_by_id(self.cbSelectAllSkills_id).click()
+        self.WebDriverWait.until(EC.presence_of_element_located((By.ID , self.cbSelectAllSkills_id))).click()
     
     def ClickOnDeleteSkills(self):
         self.driver.find_element_by_id(self.btnDeleteSkills_id).click()
@@ -176,9 +182,10 @@ class Qualifications():
     # Languages
     
     def ClickOnAddLanguages(self):
-        self.driver.find_element_by_id(self.btnAddLanguages_id).click()
+        self.WebDriverWait.until(EC.presence_of_element_located((By.ID , self.btnAddLanguages_id))).click()
     
     def SetLanguage(self, Language):
+        self.WebDriverWait.until(EC.presence_of_element_located((By.ID , self.drpSelectLanguage_id)))
         self.drp = Select(self.driver.find_element_by_id(self.drpSelectLanguage_id))
         self.drp.select_by_value(Language)
     
@@ -200,7 +207,7 @@ class Qualifications():
         self.driver.find_element_by_id(self.btnCancelLanguage_id).click()
     
     def SelectAllLanguages(self):
-        self.driver.find_element_by_id(self.cbSelectAllLanguages_id).click()
+        self.WebDriverWait.until(EC.presence_of_element_located((By.ID , self.cbSelectAllLanguages_id))).click()
     
     def ClickOnDeleteLanguages(self):
         self.driver.find_element_by_id(self.btnDeleteLanguages_id).click()
@@ -208,9 +215,10 @@ class Qualifications():
     # License
     
     def ClickOnAddLicense(self):
-        self.driver.find_element_by_id(self.btnAddLicense_id).click()
+        self.WebDriverWait.until(EC.presence_of_element_located((By.ID , self.btnAddLicense_id))).click()
     
     def SetLicenseType(self, LicenseType):
+        self.WebDriverWait.until(EC.presence_of_element_located((By.ID , self.drpLicenseType_id)))
         self.drp = Select(self.driver.find_element_by_id(self.drpLicenseType_id))
         self.drp.select_by_value(LicenseType)
     
@@ -232,7 +240,7 @@ class Qualifications():
         self.driver.find_element_by_id(self.btnCancelLicense_id).click()
     
     def SelectAllLicenses(self):
-        self.driver.find_element_by_id(self.cbSelectAllLicences_id).click()
+        self.WebDriverWait.until(EC.presence_of_element_located((By.ID , self.cbSelectAllLicences_id))).click()
     
     def ClickOnDeleteLicenses(self):
         self.driver.find_element_by_id(self.btnDeleteLicences_id).click()
@@ -240,19 +248,19 @@ class Qualifications():
     # Attachment
     
     def ClickOnAddAttachment(self):
-        self.driver.find_element_by_id(self.btnAddAttachments_id).click()
+        self.WebDriverWait.until(EC.presence_of_element_located((By.ID , self.btnAddAttachments_id))).click()
     
     def ClickOnDeleteAttachments(self):
         self.driver.find_element_by_id(self.btnDeleteAttachments_id).click()
     
     def SelectAllAttachments(self):
-        self.driver.find_element_by_id(self.cbSelectAllAttachments_id).click()
+        self.WebDriverWait.until(EC.presence_of_element_located((By.ID , self.cbSelectAllAttachments_id))).click()
     
     def ClickOnCancelUpload(self):
         self.driver.find_element_by_id(self.btnCancelUpload_id).click()
     
     def SetFilePath(self, Path):
-        self.driver.find_element_by_id(self.btnFilePath_id).send_keys(Path)
+        self.WebDriverWait.until(EC.presence_of_element_located((By.ID , self.btnFilePath_id))).send_keys(Path)
     
     def ClickOnUpload(self):
         self.driver.find_element_by_id(self.btnUploadFile_id).click()

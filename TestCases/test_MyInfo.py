@@ -2,9 +2,6 @@ from PageObjects.LoginPage import loginpage
 from utilities.customlogger import logGen
 from utilities.ReadProperties import ReadConfig
 from PageObjects.MyInfo import MyInfo
-from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.common.by import By
-from selenium.webdriver.support import expected_conditions as EC
 import pytest
 
 
@@ -39,51 +36,39 @@ class Test_000_MyInfo_Pages():
         
         # Verifying every page
         self.myinfo.ClickOnMyInfo()
-        WebDriverWait(self.driver, 10).until(EC.presence_of_element_located((By.ID , "profile-pic")))
         self.checkifpageworks("My Info")
 
         self.myinfo.ClickOnPhotoChange()
-        WebDriverWait(self.driver, 10).until(EC.presence_of_element_located((By.ID , "profile-pic")))
         self.checkifpageworks("Profile Picture")
 
         self.myinfo.ClickOnContactDetails()
-        WebDriverWait(self.driver, 10).until(EC.presence_of_element_located((By.ID , "profile-pic")))
         self.checkifpageworks("Contact Details")
 
         self.myinfo.ClickOnEmergencyContacts()
-        WebDriverWait(self.driver, 10).until(EC.presence_of_element_located((By.ID , "profile-pic")))
         self.checkifpageworks("Emergency Contacts")
 
         self.myinfo.ClickOnDependents()
-        WebDriverWait(self.driver, 10).until(EC.presence_of_element_located((By.ID , "profile-pic")))
         self.checkifpageworks("Dependents")
 
         self.myinfo.ClickOnImmigration()
-        WebDriverWait(self.driver, 10).until(EC.presence_of_element_located((By.ID , "profile-pic")))
         self.checkifpageworks("Immigration")
 
         self.myinfo.ClickOnJob()
-        WebDriverWait(self.driver, 10).until(EC.presence_of_element_located((By.ID , "profile-pic")))
         self.checkifpageworks("Job")
 
         self.myinfo.ClickOnSalary()
-        WebDriverWait(self.driver, 10).until(EC.presence_of_element_located((By.ID , "profile-pic")))
         self.checkifpageworks("Salary")
 
         self.myinfo.ClickOnTaxExemptions()
-        WebDriverWait(self.driver, 10).until(EC.presence_of_element_located((By.ID , "profile-pic")))
         self.checkifpageworks("Tax Exemptions")
 
         self.myinfo.ClickOnReportTo()
-        WebDriverWait(self.driver, 10).until(EC.presence_of_element_located((By.ID , "profile-pic")))
         self.checkifpageworks("Report To")
         
         self.myinfo.ClickOnQualifications()
-        WebDriverWait(self.driver, 10).until(EC.presence_of_element_located((By.ID , "profile-pic")))
         self.checkifpageworks("Qualifications")
 
         self.myinfo.ClickOnMembership()
-        WebDriverWait(self.driver, 10).until(EC.presence_of_element_located((By.ID , "profile-pic")))
         self.checkifpageworks("Memberships")
 
         

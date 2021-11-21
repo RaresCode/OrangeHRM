@@ -1,4 +1,7 @@
 from selenium.webdriver.support.ui import Select
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support import expected_conditions as EC
 
 class ContactDetails():
     # Contact Details
@@ -27,10 +30,11 @@ class ContactDetails():
     
     def __init__(self, driver):
         self.driver = driver
+        self.WebDriverWait = WebDriverWait(self.driver, 10)
     
     # Contact Details
     def ClickOnEdit(self):
-        self.driver.find_element_by_id(self.btnEditDetails_id).click()
+        self.WebDriverWait.until(EC.presence_of_element_located((By.ID , self.btnEditDetails_id))).click()
         
     def SetAddressStreet1(self, Address):
         self.driver.find_element_by_id(self.txtAddressStreet1_id).clear()
@@ -78,19 +82,19 @@ class ContactDetails():
     
     # Attachment
     def ClickOnAddAttachment(self):
-        self.driver.find_element_by_id(self.btnAddAttachments_id).click()
+        self.WebDriverWait.until(EC.presence_of_element_located((By.ID , self.btnAddAttachments_id))).click()
     
     def ClickOnDeleteAttachments(self):
         self.driver.find_element_by_id(self.btnDeleteAttachments_id).click()
     
     def SelectAllAttachments(self):
-        self.driver.find_element_by_id(self.cbSelectAllAttachments_id).click()
+        self.WebDriverWait.until(EC.presence_of_element_located((By.ID , self.cbSelectAllAttachments_id))).click()
     
     def ClickOnCancelUpload(self):
         self.driver.find_element_by_id(self.btnCancelUpload_id).click()
     
     def SetFilePath(self, Path):
-        self.driver.find_element_by_id(self.btnFilePath_id).send_keys(Path)
+        self.WebDriverWait.until(EC.presence_of_element_located((By.ID , self.btnFilePath_id))).send_keys(Path)
     
     def ClickOnUpload(self):
         self.driver.find_element_by_id(self.btnUploadFile_id).click()

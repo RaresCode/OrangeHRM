@@ -1,3 +1,6 @@
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support import expected_conditions as EC
 
 class MyInfo():
     linkMyInfo_id = "menu_pim_viewMyDetails"
@@ -15,39 +18,40 @@ class MyInfo():
     
     def __init__(self, driver):
         self.driver = driver
+        self.WebDriverWait = WebDriverWait(self.driver, 10)
     
     def ClickOnMyInfo(self):
-        self.driver.find_element_by_id(self.linkMyInfo_id).click()
+        self.WebDriverWait.until(EC.presence_of_element_located((By.ID , self.linkMyInfo_id))).click()
     
     def ClickOnPhotoChange(self):
-        self.driver.find_element_by_id(self.linkPhotoChange_id).click()
+        self.WebDriverWait.until(EC.presence_of_element_located((By.ID , self.linkPhotoChange_id))).click()
     
     def ClickOnContactDetails(self):
-        self.driver.find_element_by_link_text(self.linkContactDetails_link).click()
+        self.WebDriverWait.until(EC.presence_of_element_located((By.LINK_TEXT , self.linkContactDetails_link))).click()
         
     def ClickOnEmergencyContacts(self):
-        self.driver.find_element_by_link_text(self.linkEmergencyContacts_link).click()
+        self.WebDriverWait.until(EC.presence_of_element_located((By.LINK_TEXT , self.linkEmergencyContacts_link))).click()
     
     def ClickOnDependents(self):
-        self.driver.find_element_by_link_text(self.linkDependents_link).click()
+        self.WebDriverWait.until(EC.presence_of_element_located((By.LINK_TEXT , self.linkDependents_link))).click()
         
     def ClickOnImmigration(self):
-        self.driver.find_element_by_link_text(self.linkImmigration_link).click()
+        self.WebDriverWait.until(EC.presence_of_element_located((By.LINK_TEXT , self.linkImmigration_link))).click()
     
     def ClickOnJob(self):
-        self.driver.find_element_by_link_text(self.linkJob_link).click()
+        self.WebDriverWait.until(EC.presence_of_element_located((By.LINK_TEXT , self.linkJob_link))).click()
 
     def ClickOnSalary(self):
-        self.driver.find_element_by_link_text(self.linkSalary_link).click()
+        self.WebDriverWait.until(EC.presence_of_element_located((By.LINK_TEXT , self.linkSalary_link))).click()
     
     def ClickOnTaxExemptions(self):
-        self.driver.find_element_by_link_text(self.linkTaxExemptions_link).click()
+        self.WebDriverWait.until(EC.presence_of_element_located((By.LINK_TEXT , self.linkTaxExemptions_link))).click()
         
     def ClickOnReportTo(self):
-        self.driver.find_element_by_link_text(self.linkReportto_link).click()
+        self.WebDriverWait.until(EC.presence_of_element_located((By.LINK_TEXT , self.linkReportto_link))).click()
     
     def ClickOnQualifications(self):
-        self.driver.find_element_by_link_text(self.linkQualitifactions_link).click()
+        self.WebDriverWait.until(EC.presence_of_element_located((By.LINK_TEXT , self.linkQualitifactions_link))).click()
     
     def ClickOnMembership(self):
-        self.driver.find_element_by_link_text(self.linkMemberships_link).click()
+        self.WebDriverWait.until(EC.presence_of_element_located((By.LINK_TEXT , self.linkMemberships_link))).click()

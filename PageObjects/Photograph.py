@@ -1,3 +1,6 @@
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support import expected_conditions as EC
 
 class Photograph():
     btnFilePath_id = "photofile"
@@ -8,9 +11,10 @@ class Photograph():
 
     def __init__(self, driver):
         self.driver = driver
+        self.WebDriverWait = WebDriverWait(self.driver, 10)
         
     def SetFilePath(self, path):
-        self.driver.find_element_by_id(self.btnFilePath_id).send_keys(path)
+        self.WebDriverWait.until(EC.presence_of_element_located((By.ID , self.btnFilePath_id))).send_keys(path)
     
     def ClickOnUpload(self):
         self.driver.find_element_by_id(self.btnUploadFile_id).click()

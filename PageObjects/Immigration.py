@@ -1,4 +1,7 @@
 from selenium.webdriver.support.ui import Select
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support import expected_conditions as EC
 
 class Immigration():
     # Immigration
@@ -28,12 +31,14 @@ class Immigration():
     
     def __init__(self, driver):
         self.driver = driver
+        self.WebDriverWait = WebDriverWait(self.driver, 10)
     
     # Immigration
     def ClickOnAddImmigrationRecord(self):
-        self.driver.find_element_by_id(self.btnAddImmigrationRecord_id).click()
+        self.WebDriverWait.until(EC.presence_of_element_located((By.ID , self.btnAddImmigrationRecord_id))).click()
         
     def SetDocumentType(self, DocumentType):
+        self.WebDriverWait.until(EC.presence_of_element_located((By.ID , self.rdPassportDocumentType_id)))
         if DocumentType.lower() == "passport":
             self.driver.find_element_by_id(self.rdPassportDocumentType_id).click()
         elif DocumentType.lower() == "visa":
@@ -73,26 +78,26 @@ class Immigration():
         self.driver.find_element_by_id(self.btnCancelImmigrationRecord_id).click()
     
     def SelectAllImmigrationRecords(self):
-        self.driver.find_element_by_id(self.cbSelectAllImmigrations_id).click()
+        self.WebDriverWait.until(EC.presence_of_element_located((By.ID , self.cbSelectAllImmigrations_id))).click()
     
     def ClickOnDeleteAllImmigrations(self):
         self.driver.find_element_by_id(self.btnDeleteSelectedImmigrations_id).click()
     
     # Attachment
     def ClickOnAddAttachment(self):
-        self.driver.find_element_by_id(self.btnAddAttachments_id).click()
+        self.WebDriverWait.until(EC.presence_of_element_located((By.ID , self.btnAddAttachments_id))).click()
     
     def ClickOnDeleteAttachments(self):
         self.driver.find_element_by_id(self.btnDeleteAttachments_id).click()
     
     def SelectAllAttachments(self):
-        self.driver.find_element_by_id(self.cbSelectAllAttachments_id).click()
+        self.WebDriverWait.until(EC.presence_of_element_located((By.ID , self.cbSelectAllAttachments_id))).click()
     
     def ClickOnCancelUpload(self):
         self.driver.find_element_by_id(self.btnCancelUpload_id).click()
     
     def SetFilePath(self, Path):
-        self.driver.find_element_by_id(self.btnFilePath_id).send_keys(Path)
+        self.WebDriverWait.until(EC.presence_of_element_located((By.ID , self.btnFilePath_id))).send_keys(Path)
     
     def ClickOnUpload(self):
         self.driver.find_element_by_id(self.btnUploadFile_id).click()
