@@ -1,0 +1,15 @@
+# Framework
+selenium
+pytest
+
+# Parallel Test
+pytest-xdist
+
+# Report
+pytest-html
+
+# Data Driven Test
+openpyxl
+
+# Driver Manager
+webdriver-manager
