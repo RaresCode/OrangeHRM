@@ -18,6 +18,15 @@ Testing Myinfo module and login using data driven testing on OrangeHRM Demo.
 - Parallel Testing
 
 
+## Example
+
+![asta-e-bun](https://user-images.githubusercontent.com/91252395/143234801-42c148ef-33b3-4afb-becd-af231d3d8eb9.gif)
+
+
+
+## HTML Report
+
+![report1](https://user-images.githubusercontent.com/91252395/143235710-20354127-d954-40b8-9ce1-75f02c3d38f4.png)
 ## Setup
 
 - Install and configure Python3
