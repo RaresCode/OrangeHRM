@@ -22,7 +22,9 @@ Testing Myinfo module and login using data driven testing on OrangeHRM Demo.
 
 ![asta-e-bun](https://user-images.githubusercontent.com/91252395/143234801-42c148ef-33b3-4afb-becd-af231d3d8eb9.gif)
 
+## Watch The Entire Testing Process
 
+https://user-images.githubusercontent.com/91252395/149944880-02537477-c4c7-41f5-9cfb-67c7a478b36f.mp4
 
 ## HTML Report
 
